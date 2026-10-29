@@ -1,0 +1,287 @@
+@charset "UTF-8";
+
+/* ==========================================================
+   HW05 CSS 樣式表 (獨立檔)
+   主題：台中糖廠工業遺產與湖濱新生
+   作者：陳楷劼d1420592
+   風格：人文赤陶紅與深灰工業質感配色
+   ========================================================== */
+
+/* 1. 全局變數設定 */
+:root {
+    --primary-color: #8c3b2b;       /* 帝國糖廠紅磚赤陶色 */
+    --primary-hover: #6a2c20;       /* 深紅 hover 狀態 */
+    --secondary-color: #2c3e50;     /* 沉穩藍灰/鐵色 */
+    --bg-color: #fcfbf9;            /* 暖調微黃背景 */
+    --card-bg: #ffffff;             /* 卡片白底 */
+    --text-main: #333333;           /* 主文字深灰 */
+    --text-muted: #666666;          /* 次要文字灰 */
+    --border-color: #e2dacd;        /* 溫和框線顏色 */
+    --accent-bg: #f4efe8;           /* 區塊底色 */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
+}
+
+/* 2. 基礎重置與整體排版 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    line-height: 1.8;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+}
+
+/* 限制整體內容最大寬度並置中 */
+header, nav, main, footer {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 3. 超連結樣式 */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover, a:focus {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* 分隔線 */
+hr {
+    border: none;
+    border-top: 2px dashed var(--border-color);
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+/* 4. 頁首 (Header) 區塊 */
+header {
+    background-color: var(--card-bg);
+    padding: 30px 40px;
+    border-radius: 12px;
+    border-left: 8px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    margin: 6px 0;
+    color: var(--text-muted);
+}
+
+/* 5. 導覽目錄 (Nav) 區塊 */
+nav {
+    background-color: var(--accent-bg);
+    padding: 20px 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
+}
+
+nav h2 {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+}
+
+nav li a {
+    font-weight: bold;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+nav li a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* 6. 主要內容與卡片 (Main & Section) */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+section h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-bg);
+}
+
+section h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* 清單樣式優化 */
+ul, ol {
+    padding-left: 24px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* 7. 表格 (Table) 樣式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: var(--card-bg);
+    font-size: 0.95rem;
+}
+
+caption {
+    caption-side: top;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+th, td {
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+thead tr {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+thead th {
+    font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--accent-bg);
+}
+
+tbody th {
+    background-color: rgba(140, 59, 43, 0.05);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* 8. 多媒體呈現 (Figure & Image & Video) */
+figure {
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* 響應式嵌入影片容器 (RWD 16:9) */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 比例 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 15px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 9. 頁尾 (Footer) 區塊 */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+footer a {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* 10. 平板與手機版響應式微調 (RWD) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    header, section, nav {
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+    th, td {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+}
